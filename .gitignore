@@ -1,0 +1,5 @@
+config.json
+__pycache__/
+*.pyc
+.DS_Store
+domestia_outputs.json
