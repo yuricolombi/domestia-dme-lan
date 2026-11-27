@@ -2,7 +2,7 @@
 
 Intégration personnalisée pour Home Assistant permettant de piloter et de surveiller un contrôleur domotique **Domestia DME-LAN** via le réseau local (TCP, port `52001`), avec prise en charge des éclairages (gradateurs et profils d'hystérésis), des interrupteurs et de la détection des scénarios.
 
-Attention: faut de disposer de la documentation, le comportement de Domestia a été obervé via les échanges sur le LAN. Il est possible que ceux-ci soient mal interprètés !
+Attention: faute de disposer de la documentation, le comportement de Domestia a été obervé via les échanges sur le LAN. Il est possible que ceux-ci soient mal interprètés !
 
 ## Fonctionnalités
 

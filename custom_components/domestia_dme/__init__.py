@@ -42,7 +42,12 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     if DOMAIN not in config:
         return True
 
-    config_path = Path(hass.config.path("custom_components", DOMAIN, DEFAULT_CONFIG_FILE))
+    candidate_paths = [
+        Path(hass.config.path(DEFAULT_CONFIG_FILE)),
+        Path(hass.config.path(f"{DOMAIN}_{DEFAULT_CONFIG_FILE}")),
+        Path(hass.config.path("custom_components", DOMAIN, DEFAULT_CONFIG_FILE)),
+    ]
+    config_path = next((p for p in candidate_paths if p.exists()), candidate_paths[0])
     local_cfg = await hass.async_add_executor_job(_read_config, config_path)
 
     if not local_cfg:
